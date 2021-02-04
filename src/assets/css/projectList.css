@@ -1,0 +1,21 @@
+
+
+.project-block{
+    display:flex;
+    justify-content: center;
+}
+
+.project-link{
+    width:50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+    cursor: pointer;
+    background-color:grey;
+    margin: 50px;
+
+}
+
+
+

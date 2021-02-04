@@ -1,0 +1,33 @@
+.bubble {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .bubble-text {
+    background-color :  rgb(108, 123, 172);
+    color: white;
+    padding: 20px 15px;
+    border-radius: 3px;
+    width: 50%;
+    position: relative;
+  }
+  
+ 
+  
+  .deleteCross {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    margin: auto;
+    background-color: rgb(108, 123, 172);
+    border-radius: 30px;
+    border: 1px solid white;
+    display: inline-block;
+    cursor: pointer;
+    color:white;
+    font-size: 15px;
+    padding: 2px 6px;
+    text-decoration: none;
+  }
+  

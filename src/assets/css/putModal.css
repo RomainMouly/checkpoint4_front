@@ -1,0 +1,50 @@
+.overlay-modal{
+    position: absolute;
+    left :0;
+    top : 0;
+    right : 0;
+    bottom : 0;
+    background:rgba(0,0,0,0.75) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenu-modal {
+    width : 80%;
+    height : 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    
+
+}
+
+.btnClose {
+    position: absolute;
+    top : 0;
+    right : 10px;
+    margin: auto;
+    background-color: var(--main-color);
+    border-radius: 28px;
+    border: 1px solid #ffffff;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 2px 25px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #2f6627;
+}
+
+.allButton {
+    display:flex;
+    justify-content: center;
+}
+
+
+.sessionsList{
+    width:100%
+}
+

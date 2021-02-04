@@ -1,13 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { userConnectedAction } from "../../redux/actions/userAction";
 import "../../assets/css/banner.css";
 
-const Banner = () => {
+const Banner = ({ user, handleIsConnected }) => {
+  const handleClick = (e) => {
+    e.preventDefault();
+    handleIsConnected(false);
+  };
+
   return (
     <div className="container-banner">
       <div className="buttonBar">
         <button className="button-retour">retour</button>
 
-        <button className="button-connexion">connexion</button>
+        {!user.connected ? (
+          <div>
+            <button type="button">
+              <Link className="linkPages" to="/signin">
+                CONNEXION
+              </Link>
+            </button>{" "}
+          </div>
+        ) : (
+          <div className="linkPages">
+            <div className="hello-name">
+              Bonjour {user.data.firstname} {user.data.lastname}{" "}
+            </div>
+            <button className="log-out" onClick={(e) => handleClick(e)}>
+              Déconnexion
+            </button>
+            <button type="button">
+              <Link className="linkPages" to="/admin">
+                message
+              </Link>
+            </button>{" "}
+          </div>
+        )}
       </div>
       <div className="box-name-projet">
         <div className="who-i-am">
@@ -26,4 +56,12 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  handleIsConnected: (newValue) => dispatch(userConnectedAction(newValue)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Banner);
