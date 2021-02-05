@@ -7,6 +7,8 @@ import ProjectPage from "./components/project/ProjectPage";
 import AdminPage from "./components/AdminPage";
 import HomePage from "./components/home/HomePage";
 import ContactPage from "./components/ContactPage";
+import PutModal from "./components/home/PutModal";
+import AddProject from "./components/home/AddProject";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/signin" component={SignIn} />
         <Route path="/admin" component={AdminPage} />
         <Route path="/contact" component={ContactPage} />
+        <Route path="/putproject/:id" component={PutModal} />
+        <Route path="/addproject" component={AddProject} />
       </Switch>
     </div>
   );

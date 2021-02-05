@@ -1,3 +1,5 @@
+
+
 .bubble {
     margin-top: 50px;
     display: flex;
@@ -31,3 +33,7 @@
     text-decoration: none;
   }
   
+
+  .contact-message{
+    margin-top :20px;
+  }

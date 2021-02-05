@@ -26,7 +26,7 @@ const ContactPage = () => {
       <div className="BlocInput">
         <h1>Me contacter </h1>
 
-        <div className="PostLive">
+        <div className="post-contact">
           <input
             type="firstname"
             id="firstname"
@@ -36,7 +36,7 @@ const ContactPage = () => {
             onChange={(e) => handleChange(e)}
           />
         </div>
-        <div className="PostLive">
+        <div className="post-contact">
           <input
             type="lastname"
             id="lastname"
@@ -46,7 +46,7 @@ const ContactPage = () => {
             onChange={(e) => handleChange(e)}
           />
         </div>
-        <div className="PostLive">
+        <div className="post-contact">
           <input
             type="email"
             id="email"
@@ -56,7 +56,7 @@ const ContactPage = () => {
             onChange={(e) => handleChange(e)}
           />
         </div>
-        <div className="PostLive">
+        <div className="post-contact">
           <textarea
             type="message"
             id="message"

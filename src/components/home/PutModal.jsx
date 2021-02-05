@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 import "../../assets/css/putModal.css";
-import ScrollToTop from "../ScrollToTop";
 
-const PutModal = ({ id, setToggleModal, setProjectLists }) => {
-  const [input, setInput] = useState({});
+const PutModal = ({ match }) => {
+  const { id } = match.params;
+  const [form, setForm] = useState({});
+  const [projectLists, setProjectLists] = useState([]);
   const [project, setProject] = useState({});
+  const history = useHistory();
 
   useEffect(() => {
     axios
@@ -15,13 +18,16 @@ const PutModal = ({ id, setToggleModal, setProjectLists }) => {
   }, [id]);
 
   const handleChange = (e) => {
-    setInput({ ...input, [e.target.id]: e.target.value });
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
   };
 
-  const handleClick = async () => {
+  const handleSubmit = async () => {
     await axios
       .put(`http://localhost:3001/api/projects/${id}`, {
-        ...input,
+        ...form,
       })
       .then(() =>
         axios
@@ -29,84 +35,78 @@ const PutModal = ({ id, setToggleModal, setProjectLists }) => {
           .then((result) => setProjectLists(result.data))
       );
 
-    setToggleModal(null);
+    history.push("/");
   };
 
   return (
-    <div className="overlay-modal">
-      <ScrollToTop />
-      <div className="contenu-modal">
-        <button
-          type="button"
-          onClick={() => setToggleModal(null)}
-          className="btnClose"
-        >
-          Fermer
-        </button>
-
-        <p>
+    <div className="overlay">
+      <div className="BlocInput">
+        <h1>Modifier le projet </h1>
+        <div className="put-project">
           <input
             type="name"
             id="name"
             name="name"
+            className="inputname"
             placeholder={project.name}
             onChange={(e) => handleChange(e)}
           />
-        </p>
-        <p>
+        </div>
+        <div className="put-project">
           <input
             type="technology"
             id="technology"
             name="technology"
+            className="inputname"
             placeholder={project.technology}
             onChange={(e) => handleChange(e)}
           />
-        </p>
-        <p>
+        </div>
+        <div className="put-project">
           <input
             type="client"
             id="client"
             name="client"
+            className="inputname"
             placeholder={project.client}
             onChange={(e) => handleChange(e)}
           />
-        </p>
-        <p>
+        </div>
+        <div className="put-project">
           <input
             type="date"
             id="date"
             name="date"
+            className="inputname"
             placeholder={project.date}
             onChange={(e) => handleChange(e)}
           />
-        </p>
+        </div>
         <p>
           <input
             type="picture"
             id="picture"
             name="picture"
+            className="inputname"
             placeholder={project.picture}
             onChange={(e) => handleChange(e)}
           />
         </p>
-        <p>
-          <input
+        <div className="put-project">
+          <textarea
             type="description"
             id="description"
             name="description"
+            className="input-textarea"
             placeholder={project.description}
             onChange={(e) => handleChange(e)}
           />
-        </p>
-
-        <button
-          className="petitboutton"
-          type="submit"
-          onClick={() => handleClick()}
-        >
-          Modifier le projet
-        </button>
+        </div>
       </div>
+
+      <button className="boutonPost" type="submit" onClick={handleSubmit}>
+        Envoyer
+      </button>
     </div>
   );
 };

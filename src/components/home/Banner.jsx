@@ -13,29 +13,24 @@ const Banner = ({ user, handleIsConnected }) => {
   return (
     <div className="container-banner">
       <div className="buttonBar">
-        <button className="button-retour">retour</button>
-
         {!user.connected ? (
           <div>
-            <button type="button">
-              <Link className="linkPages" to="/signin">
-                CONNEXION
-              </Link>
-            </button>{" "}
+            <Link className="link-page" to="/signin">
+              &#10001;
+            </Link>
           </div>
         ) : (
           <div className="linkPages">
             <div className="hello-name">
               Bonjour {user.data.firstname} {user.data.lastname}{" "}
             </div>
-            <button className="log-out" onClick={(e) => handleClick(e)}>
-              Déconnexion
-            </button>
-            <button type="button">
-              <Link className="linkPages" to="/admin">
-                message
-              </Link>
-            </button>{" "}
+            <Link className="link-page log-out" onClick={(e) => handleClick(e)}>
+              &#8635;
+            </Link>
+
+            <Link className="link-page" to="/admin">
+              &#9993;
+            </Link>
           </div>
         )}
       </div>

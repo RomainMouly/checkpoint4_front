@@ -3,13 +3,13 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { userConnectedAction } from "../../redux/actions/userAction";
-import PutModal from "./PutModal";
 import AddProject from "./AddProject";
+
 import "../../assets/css/projectList.css";
 
 const ProjectList = ({ user, handleIsConnected }) => {
   const [projectLists, setProjectLists] = useState([]);
-  const [toggleModal, setToggleModal] = useState(null);
+
   const [isToggle, setIsToggle] = useState(false);
 
   useEffect(() => {
@@ -28,7 +28,17 @@ const ProjectList = ({ user, handleIsConnected }) => {
   };
 
   return (
-    <div className="Project-list">
+    <div className="project-list">
+      {user.connected ? (
+        <div className="add-proj">
+          <Link className="link-page" to="/addproject">
+            &#43;
+          </Link>
+        </div>
+      ) : (
+        ""
+      )}
+
       {projectLists.map((project) => (
         <div className="project-block">
           <Link className="project-link" to={`/projects/${project.id}`}>
@@ -46,16 +56,13 @@ const ProjectList = ({ user, handleIsConnected }) => {
           </Link>
           {user.connected ? (
             <div className="put-delete">
-              <button
-                className="petitboutton"
-                type="button"
-                value={project.id}
-                onClick={() => setToggleModal(project.id)}
-              >
-                <img
-                  alt="boutoncrayon"
-                  src="https://img.icons8.com/material-outlined/24/000000/pencil--v2.png"
-                />
+              <button className="petitboutton" type="button" value={project.id}>
+                <Link className="linkPages" to={`/putproject/${project.id}`}>
+                  <img
+                    alt="boutoncrayon"
+                    src="https://img.icons8.com/material-outlined/24/000000/pencil--v2.png"
+                  />
+                </Link>
               </button>
 
               <button
@@ -74,25 +81,7 @@ const ProjectList = ({ user, handleIsConnected }) => {
           )}
         </div>
       ))}
-      {user.connected ? (
-        <button
-          className="addboutton"
-          type="button"
-          onClick={() => handleToggle()}
-        >
-          +
-        </button>
-      ) : (
-        ""
-      )}
-      {toggleModal !== null && (
-        <PutModal
-          id={toggleModal}
-          setToggleModal={setToggleModal}
-          projectLists={projectLists}
-          setProjectLists={setProjectLists}
-        />
-      )}
+
       <div className="add-project">
         {isToggle && (
           <AddProject

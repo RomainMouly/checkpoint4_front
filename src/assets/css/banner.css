@@ -47,7 +47,7 @@
     margin: 20px;
     position: absolute;
     display: flex;  
-    justify-content: space-between;
+    justify-content: flex-end;
     color: white;
    
 }
@@ -60,4 +60,16 @@
         font-size: 3em;
     }
 }
+
+.link-page{
+    text-decoration: none;
+    color:white;
+    font-size: 40px;
+    margin-left: 30px;
+   
+
+}
+
+
+
 

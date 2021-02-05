@@ -17,24 +17,26 @@ const AdminPage = () => {
   };
 
   return messages.map((mess) => (
-    <div className="bubble">
-      <div className="bubble-text">
-        <div className="contact-name">
-          <p>{mess.firstname}</p>
-          <p>{mess.lastname}</p>
-          <p>{mess.email}</p>
-        </div>
-        <div className="contact-message">
-          <p>{mess.message}</p>
-        </div>
-        <div>
-          <button
-            className="deleteCross"
-            type="button"
-            onClick={() => handleDelete(mess.id)}
-          >
-            &#215;
-          </button>
+    <div className="overlay-admin">
+      <div className="bubble">
+        <div className="bubble-text">
+          <div className="contact-name">
+            <p>{mess.firstname}</p>
+            <p>{mess.lastname}</p>
+            <p>{mess.email}</p>
+          </div>
+          <div className="contact-message">
+            <p>{mess.message}</p>
+          </div>
+          <div>
+            <button
+              className="deleteCross"
+              type="button"
+              onClick={() => handleDelete(mess.id)}
+            >
+              &#215;
+            </button>
+          </div>
         </div>
       </div>
     </div>
