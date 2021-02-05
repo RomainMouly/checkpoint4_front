@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import "../../assets/css/addProject.css";
 import "../../assets/css/putModal.css";
 
 const AddProject = () => {
