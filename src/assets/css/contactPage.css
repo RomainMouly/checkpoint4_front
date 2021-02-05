@@ -1,0 +1,66 @@
+
+.overlay {
+    flex-direction: column;
+    align-items: center;
+    background-image: url("https://images.unsplash.com/photo-1584949091598-c31daaaa4aa9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  input {
+    background-color: rgba(243, 241, 241, 1);
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.4em;
+    width: 100%;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border: none;
+    border-bottom: 2px solid  rgb(108, 123, 172);
+    font-style: italic;
+  }
+  
+  .BlocInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 80px auto;
+  }
+
+  .input-textarea{
+      width:100%;
+      height:250%;
+  }
+  
+  @media screen and (min-width: 800px){
+    .BlocInput {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 80px auto;
+      width: 600px;
+    }
+  }
+  
+  .BlocInput h1 {
+   color: white;
+    font-weight: 600;
+    border-bottom: 1px solid white;
+    margin-bottom: 15%;
+  }
+  
+  .boutonPost {
+    background-color: rgb(108, 123, 172);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 20px;
+    transition: transform ease-in-out 0.5s;
+  }
+  

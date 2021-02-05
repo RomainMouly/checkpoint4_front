@@ -1,0 +1,19 @@
+
+.sessionsBlock {
+    display: flex;
+    border-radius: 10px;
+    margin: 5px;
+    border: 1px solid rgb(101, 101, 101);
+    align-items: center;
+    padding: 0px 7px 0 7px;
+    justify-content: space-between;
+    background-color: white;
+    
+  }
+
+.sessionsBlock > p {
+ 
+    margin-left: 7%;
+    
+  }
+  

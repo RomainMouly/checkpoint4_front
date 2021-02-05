@@ -1,0 +1,75 @@
+.container-banner{
+    height: 100vh;
+    background-image: url("https://images.unsplash.com/photo-1562907550-096d3bf9b25c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80");
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+.box-name-projet{
+    color: white;
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+}
+
+
+
+.slogan{
+    /* border:1px solid blue; */
+    margin-top: 20px;
+    font-size: 0.7em;
+    padding: 2px 15px;
+    border-radius: 4px;
+    text-align:center;
+
+}
+
+.who-i-am{
+    margin-top: 70px;;
+}
+
+.my-name{
+    text-align: center;
+
+}
+
+.my-presentation{
+   margin-bottom: 50px;
+}
+
+.buttonBar{
+    width:90%;
+    margin: 20px;
+    position: absolute;
+    display: flex;  
+    justify-content: flex-end;
+    color: white;
+   
+}
+
+
+
+
+@media screen and (min-width: 480px){
+    .box-name-projet{
+        font-size: 3em;
+    }
+}
+
+.link-page{
+    text-decoration: none;
+    color:white;
+    font-size: 40px;
+    margin-left: 30px;
+   
+
+}
+
+
+
+
